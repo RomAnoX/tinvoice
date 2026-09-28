@@ -1,0 +1,8 @@
+{
+  "name": "tinvoice",
+  "title": "Tinvoice",
+  "size": "1120x760",
+  "id": "com.example.tinvoice",
+  "version": "0.1.0",
+  "minTinyjsVersion": "0.42.2"
+}

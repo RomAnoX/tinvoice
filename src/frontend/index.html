@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tinvoice</title>
+<link rel="stylesheet" href="style.css">
+<style id="invoice-base-style"></style>
+<style id="theme-style"></style>
+</head>
+<body>
+
+<div class="app-chrome">
+  <div class="toolbar">
+    <button id="openCsv">Open Toggl CSV…</button>
+    <span id="csvName" class="csv-name">no file loaded</span>
+
+    <label class="field-inline">
+      Paid
+      <input id="paid" type="number" min="0" step="0.01" value="0">
+    </label>
+
+    <label class="field-inline">
+      Theme
+      <select id="theme"></select>
+    </label>
+
+    <span class="spacer"></span>
+
+    <button id="exportHtml" disabled>Export HTML</button>
+    <button id="exportPdf" disabled>Export PDF</button>
+    <button id="toggleSettings">Settings</button>
+    <button id="toggleTemplate">Template</button>
+  </div>
+
+  <div id="templatePanel" class="template-panel hidden">
+    <div class="template-toolbar">
+      <label class="field-inline"><input id="useTemplate" type="checkbox"> Use custom template</label>
+      <span class="spacer"></span>
+      <button id="saveTemplate">Save Template</button>
+      <button id="resetTemplate">Reset to Default</button>
+    </div>
+    <textarea id="templateEditor" spellcheck="false"></textarea>
+  </div>
+
+  <div id="settings" class="settings hidden">
+    <div class="settings-col">
+      <h3>Your company (Bill From)</h3>
+      <label>Name<input id="c-name"></label>
+      <label>Street<input id="c-street"></label>
+      <label>City, State ZIP<input id="c-locality"></label>
+      <label>Country<input id="c-country"></label>
+      <label>Email<input id="c-email"></label>
+      <label>Phone<input id="c-phone"></label>
+    </div>
+    <div class="settings-col">
+      <h3>Client (Bill To)</h3>
+      <label>Client code<input id="cl-code"></label>
+      <label>Name<input id="cl-name"></label>
+      <label>Street<input id="cl-street"></label>
+      <label>City, State ZIP<input id="cl-locality"></label>
+      <label>Country<input id="cl-country"></label>
+      <label>Hourly rate (USD)<input id="rate" type="number" min="0" step="0.01"></label>
+      <button id="saveSettings">Save settings</button>
+    </div>
+  </div>
+
+  <div class="err" id="err"></div>
+</div>
+
+<div id="invoiceWrap" class="invoice-wrap">
+  <div id="invoice" class="invoice-placeholder">Open or drop a Toggl detailed-report CSV to generate an invoice.</div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

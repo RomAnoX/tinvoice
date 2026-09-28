@@ -1,0 +1,5 @@
+.build/
+.agents/
+.claude/
+.remember/
+.DS_Store
